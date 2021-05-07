@@ -1,0 +1,236 @@
+<Muffin>:
+
+    padding: 0
+    text_label: label
+    text_result: result
+    text_circle_top: text_input_circle_top
+    text_rect_top: text_input_rect_top
+    text_circle_bottom: text_input_circle_bottom
+    text_rect_bottom: text_input_rect_bottom
+    squareButtonDown: squareBottom
+    rectButtonDown: rectBottom
+    circleButtonDown: circleBottom
+    squareButtonTop: squareTop
+    rectButtonTop: rectTop
+    circleButtonTop: circleTop
+
+
+    TextInput:
+        id: text_input_circle_top
+        #text: " "
+        hint_text: ' '
+        input_type: 'number'
+        input_filter: 'int'
+        background_color: (215/255, 231/255, 254/255, 1)
+        border_radius: 18
+        padding: [10,10]
+        size_hint: .4, .05
+        pos_hint: {'x':.04, 'y':.63}
+        multiline: False
+        readonly: False
+
+    TextInput:
+        id: text_input_rect_top
+        hint_text: ' '
+        #text: " "
+        input_type: 'number'
+        input_filter: 'int'
+        background_color: (215/255, 231/255, 254/255, 0)
+        padding: [10,10]
+        size_hint: .4, .05
+        pos_hint: {'x':.56, 'y':.63}
+        multiline: False
+        readonly: False
+
+    TextInput:
+        id: text_input_circle_bottom
+        hint_text: " "
+        #text: " "
+        input_type: 'number'
+        input_filter: 'int'
+        background_color: (215/255, 231/255, 254/255, 1)
+        padding: [10,10]
+        size_hint: .4, .05
+        pos_hint: {'x':.04, 'y':.30}
+        multiline: False
+        readonly: False
+
+    TextInput:
+        id: text_input_rect_bottom
+        hint_text: " "
+        #text: " "
+        input_type: 'number'
+        input_filter: 'int'
+        background_color: (215/255, 231/255, 254/255, 0)
+        padding: [10,10]
+        size_hint: .4, .05
+        pos_hint: {'x':.56, 'y':.30}
+        multiline: False
+        readonly: False
+
+    Label:
+        id: label
+        text: " "
+        font_name: 'Chalkduster.ttf'
+        input_type: 'number'
+        input_filter: 'int'
+        font_size: 80
+        size_hint: .1, .15
+        pos_hint: {'x': .65, 'y': .02}
+
+    Label:
+        text: "Smolikova Cakes"
+        font_name: 'Chalkduster.ttf'
+        font_size: 60
+        size_hint: .1, .15
+        pos_hint: {'x': .45, 'y': .88}
+
+    Label:
+        text: "Ratio: "
+        font_name: 'Chalkduster.ttf'
+        font_size: 80
+        size_hint: .1, .15
+        pos_hint: {'x': .215, 'y': .02}
+
+    Buttons:
+        id: circleTop
+        #text: "Circle"
+        size_hint: .3, .18
+        pos_hint:{'x': .04, 'y':.73}
+
+        on_press:
+            root.circle_button_top()
+            root.circle_textinput_top()
+        Image:
+            source: 'circle.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 210
+            height: 210
+
+    Buttons:
+        id: rectTop
+        #text: "Rectangle"
+        size_hint: .3, .18
+        pos_hint:{'x': .66, 'y':.73}
+
+        on_press:
+            root.rect_button_top()
+            root.rect_textinput_top()
+        Image:
+            source: 'rect.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 170
+            height: 170
+
+    Buttons:
+        id: squareTop
+        #text: "Square"
+        size_hint: .3, .18
+        pos_hint:{'x': .35, 'y':.73}
+
+        on_press:
+            root.square_button_top()
+            root.square_textinput_top()
+        Image:
+            source: 'square.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 170
+            height: 170
+
+    Buttons:
+        id: circleBottom
+        #text: "Circle"
+        size_hint: .3, .18
+        pos_hint:{'x': .04, 'y':.40}
+
+        on_press:
+            root.circle_button_down()
+            root.circle_textinput_bottom()
+
+        Image:
+            source: 'circle.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 210
+            height: 210
+
+
+    Buttons:
+        id: rectBottom
+        #text: "Rectangle"
+        size_hint: .3, .18
+        pos_hint:{'x': .66, 'y':.40}
+
+        on_press:
+            root.rect_button_down()
+            root.rect_textinput_bottom()
+        Image:
+            source: 'rect.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 170
+            height: 170
+
+    Buttons:
+        id: squareBottom
+        #text: "Square"
+        size_hint: .3, .18
+        pos_hint:{'x': .35, 'y':.40}
+        on_press:
+            root.square_button_down()
+            root.square_textinput_bottom()
+        Image:
+            source: 'square.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 170
+            height: 170
+
+
+
+    ResultButton:
+        id: result
+        #text: " "
+        size_hint: .92, .11
+        pos_hint:{'x': .04, 'y':.15}
+
+        on_press:
+            root.result()
+        Image:
+            source: 'result.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            width: 320
+            height: 320
+
+
+<Buttons@ToggleButton>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255, 84/255, 150/255, 1) if self.state == 'normal' else (1,1,1,.5)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [18]
+
+<ResultButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255, 84/255, 150/255, 1) if self.state == 'normal' else (1,1,1,.5)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [18]
+
+
+
+
+
+
